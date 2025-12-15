@@ -1,18 +1,30 @@
 class Solution {
-    public int maximumNumberOfStringPairs(String[] words) {
-       Set<String> seen = new HashSet<>();
-        int pairs = 0;
-
-        for (String w : words) {
-            String rev = new StringBuilder(w).reverse().toString();
-            if (seen.contains(rev)) {
-                pairs++;
-                seen.remove(rev); // use up the matched string
-            } else {
-                seen.add(w);
-            }
+    public String reverse(String s){
+        int sn=s.length();
+        String rev="";
+        for(int i=sn-1;i>=0;i--){
+          rev=rev+s.charAt(i);
         }
-
-        return pairs; 
+        return rev;
+    }
+    public int maximumNumberOfStringPairs(String[] words) 
+    {
+       int n=words.length;
+       int ans=0;
+       for(int i=0;i<n-1;i++)
+       {
+        for(int j=i+1;j<n;j++)
+        {
+            String a=words[i];
+            String b=words[j];
+            String revb=reverse(b);
+            if(revb.equals(a))
+            {
+            ans++;
+            }
+            
+        }
+       }
+       return ans;
     }
 }
