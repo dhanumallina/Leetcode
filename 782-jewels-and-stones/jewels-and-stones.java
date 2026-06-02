@@ -1,25 +1,15 @@
 class Solution {
-    public int numJewelsInStones(String jewels, String stones) 
-    {
-    int count=0;
-    for(int i=0;i<stones.length();i++)
-    {
-        char c=stones.charAt(i);
-        boolean found=false;
-        for(int j=0;j<jewels.length();j++)
-        {
-            char ch=jewels.charAt(j);
-            if(c==ch)
-            {
-              found=true;
-              break;
+    public int numJewelsInStones(String jewels, String stones) {
+        int count=0;
+       for(int i=0;i<stones.length();i++){
+        char stone=stones.charAt(i);
+        for(int j=0;j<jewels.length();j++){
+            char jewel=jewels.charAt(j);
+            if(stone==jewel){
+             count=count+1;
             }
         }
-        if(found)
-        {
-            count=count+1;
-        }
+       }
+       return count;
     }
-    return count;
-    }
-}
+}   
