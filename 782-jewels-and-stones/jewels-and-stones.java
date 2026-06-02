@@ -7,6 +7,7 @@ class Solution {
             char jewel=jewels.charAt(j);
             if(stone==jewel){
              count=count+1;
+             break ;
             }
         }
        }
