@@ -1,16 +1,14 @@
 class Solution {
     public int maxDistance(int[] colors) {
-      int Hcol=colors[0];
-     // int diff=0;
-      int maxdiff=0;
-      for(int i=0;i<colors.length-1;i++){
-        for(int j=i+1;j<colors.length;j++){
-            if(colors[i]!=colors[j]){
-                int dist=Math.abs(i-j);
-                maxdiff=Math.max(dist,maxdiff);
-            }
-        }
-      }
-      return maxdiff; 
+     int n=colors.length;
+       int maxdiff=0;
+      for(int i=0;i<n-1;i++){
+          if(colors[i] != colors[0])
+    maxdiff = Math.max(maxdiff, i);
+
+if(colors[i] != colors[n-1])
+    maxdiff = Math.max(maxdiff, n-1-i); 
     }
+      return maxdiff;
+}
 }
