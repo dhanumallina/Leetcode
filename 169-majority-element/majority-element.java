@@ -10,6 +10,7 @@ class Solution {
 	        }
 	                if(count>arr.length/2){
                         ans=arr[i];
+                        break ;
 	                }
 	        }
 return ans;
