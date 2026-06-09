@@ -8,6 +8,7 @@ class Solution {
      for(int i:hm.keySet()){
          if(hm.get(i)>nums.length/2){
             ans=ans+i;
+            break;
      }
 } 
 return ans;
