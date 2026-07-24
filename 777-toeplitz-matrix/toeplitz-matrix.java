@@ -1,28 +1,44 @@
 class Solution {
-    public boolean checkDiagonal(int[][] matrix, int i, int j) {
+
+    public boolean valid(int matrix[][], int a, int b) {
         int r = matrix.length;
         int c = matrix[0].length;
+
+        int i = a;
+        int j = b;
+
         int temp = matrix[i][j];
+        boolean isvalid = true;
+
         while (i < r && j < c) {
             if (matrix[i][j] != temp) {
-                return false;
+                isvalid = false;
             }
             i++;
             j++;
         }
-        return true;
+
+        return isvalid;
     }
+
     public boolean isToeplitzMatrix(int[][] matrix) {
-        for (int j = 0; j < matrix[0].length; j++) {
-            if (!checkDiagonal(matrix, 0, j)) {
-                return false;
+
+        boolean ans = true;
+        int r = matrix.length;
+        int c = matrix[0].length;
+        for (int j = 0; j < c; j++) {
+            boolean temp = valid(matrix, 0, j);
+            if (temp == false) {
+                ans = false;
             }
         }
-        for (int i = 1; i < matrix.length; i++) {
-            if (!checkDiagonal(matrix, i, 0)) {
-                return false;
+        for (int i = 1; i < r; i++) {
+            boolean temp = valid(matrix, i, 0);
+            if (!temp) {
+                ans = false;
             }
         }
-        return true;
+
+        return ans;
     }
 }
