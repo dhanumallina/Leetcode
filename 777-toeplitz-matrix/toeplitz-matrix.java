@@ -34,7 +34,7 @@ class Solution {
         }
         for (int i = 1; i < r; i++) {
             boolean temp = valid(matrix, i, 0);
-            if (!temp) {
+            if (temp==false) {
                 ans = false;
             }
         }
