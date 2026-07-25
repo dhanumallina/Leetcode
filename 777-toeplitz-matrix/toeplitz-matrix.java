@@ -28,13 +28,13 @@ class Solution {
         int c = matrix[0].length;
         for (int j = 0; j < c; j++) {
             boolean temp = valid(matrix, 0, j);
-            if (temp == false) {
+            if (!temp) {
                 ans = false;
             }
         }
         for (int i = 1; i < r; i++) {
             boolean temp = valid(matrix, i, 0);
-            if (temp==false) {
+            if (!temp) {
                 ans = false;
             }
         }
